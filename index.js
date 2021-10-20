@@ -16,13 +16,14 @@ dbConection();
 console.log(process.env);
 
 // Creando 
-app.get('/',(req,res)=>{
-    res.json({
-        ok:true,
-        msg: 'Bienvenidos a node'
-    });
-})
-
+//Rutas de la API
+app.use('/api/usuarios', require('./routes/usuario.routes'));
+app.use('/api/actor', require('./routes/autor.routes'));
+app.use('/api/pelicula', require('./routes/peliculas.routes'));
+app.use('/api/director', require('./routes/directores.routes'));
+app.use('/api/login', require('./routes/auth.routes'));
+app.use('/api/logindirector', require('./routes/loginDirector.routes'));
+app.use('/api/loginpeli', require('./routes/verpeli.routes'));
 //codigo para desplegar el servidor
 app.listen(process.env.PORT,()=>{
     console.log('Servidor Node.js desplegado en el puerto: ' +process.env.PORT);
