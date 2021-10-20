@@ -2,9 +2,9 @@ const { response } = require('express');
 const Peliculas= require('../models/pelicula.models');
 
 const getPeliculas = async(req, res = response) => {
-    const pelicula = await peliculas.find().
-    populate('usuario', 'nombre img').
-    populate('pelicula', 'nombre img');
+    const pelicula = await Peliculas.find()
+    .populate('usuario', 'nombre genero')
+   .populate('actor', 'nombre genero');
 
     res.json({
         ok: true,
@@ -43,8 +43,8 @@ const actualizarPeliculas = async(req, res = response) => {
 
     try {
 
-        const pelicula= await peliculas.findById(id);
-        if (!pelicula) {
+        const pelicula= await Peliculas.findById(id);
+        if (!peliculas) {
             return res.status(404).json({
                 ok: true,
                 msg: 'Película no existe'
