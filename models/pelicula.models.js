@@ -24,6 +24,7 @@ const PeliculaSchema = Schema({
         type: Schema.Types.ObjectId,
         ref: 'Actor'
     }
+    
 }, { collection: 'peliculas' }); // codigo utilizado para asignar el nombre de la colleccion en mongodb
 // sino asignamos un nombre mongodb creara la coleccion asignandole una s al final
 PeliculaSchema.method('toJSON', function() {

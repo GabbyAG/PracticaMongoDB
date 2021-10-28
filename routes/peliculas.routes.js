@@ -9,7 +9,7 @@ const { validarJWT } = require('../midlewares/validarJWT');
 const { getPeliculas, actualizarPeliculas, eliminarPeliculas, crearPeliculas } = require('../controllers/peliculas.controllers');
 const router = Router();
 
-router.get('/', getPeliculas);
+router.get('/',getPeliculas);
 
 router.post('/', [
         

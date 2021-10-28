@@ -2,9 +2,10 @@ const { response } = require('express');
 const Actor = require('../models/actor.models');
 
 const getActor = async(req, res = response) => {
-    const actor = await actor.find().
-    populate('usuario', 'nombre img').
-    populate('pelicula', 'nombre img');
+    const actor = await actor.find()
+
+    .populate('usuario', 'nombre img')
+    .populate('pelicula', 'nombre img');
 
     res.json({
         ok: true,

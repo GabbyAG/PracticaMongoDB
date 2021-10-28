@@ -6,10 +6,10 @@ const getPeliculas = async(req, res = response) => {
     .populate('usuario', 'nombre genero')
    .populate('actor', 'nombre genero');
 
-    res.json({
-        ok: true,
+    res.json(
+       // ok: true,
         pelicula
-    });
+    );
 }
 const crearPeliculas = async(req, res = response) => {
     const uid = req.uid;
